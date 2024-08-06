@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4933292759921468}
   - component: {fileID: 212396194626849566}
   m_Layer: 0
-  m_Name: fireball-blue-big
+  m_Name: XP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
