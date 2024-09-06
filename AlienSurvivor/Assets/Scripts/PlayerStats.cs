@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
     public int life = 100;
     public int maxLife = 100;
     public int armor = 0;
+    public int damage = 10;
     public float damageMultiplier = 1;
     public float speedMultiplier = 1;
     public int level = 1;
@@ -28,13 +29,13 @@ public class PlayerStats : MonoBehaviour
         
     }
 
-    void upgradeLife(int amount)
+    public void upgradeLife(int amount)
     {
         life += amount;
         maxLife += amount;
     }
 
-    void heal(int amount)
+    public void heal(int amount)
     {
         life += amount;
         if (life > maxLife)
@@ -43,22 +44,22 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void upgradeArmor(int amount)
+    public void upgradeArmor(int amount)
     {
         armor += amount;
     }
 
-    void upgradeDamageMultiplier(float amount)
+    public void upgradeDamageMultiplier(float amount)
     {
         damageMultiplier += amount;
     }
 
-    void upgradeSpeedMultiplier(float amount)
+    public void upgradeSpeedMultiplier(float amount)
     {
         speedMultiplier += amount;
     }
 
-    void takeDamage(int amount)
+    public void takeDamage(int amount)
     {
         if (armor > 0)
         {
@@ -75,7 +76,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void levelUp()
+    public void levelUp()
     {
         upgradeLife(10);
         heal(maxLife);

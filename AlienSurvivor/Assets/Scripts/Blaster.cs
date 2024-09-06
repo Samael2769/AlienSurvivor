@@ -30,7 +30,7 @@ public class Blaster : MonoBehaviour
             Fire(bulletSpawns[1]);
             Fire(bulletSpawns[2]);
         }
-        else if (level == 3)
+        else if (level >= 3)
         {
             Fire(bulletSpawns[0]);
             Fire(bulletSpawns[1]);
