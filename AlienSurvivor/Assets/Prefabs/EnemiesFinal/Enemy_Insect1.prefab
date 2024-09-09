@@ -93,7 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   projectilePrefab: {fileID: 0}
-  speed: 1
+  speed: 7
+  rotationSpeed: 5
   distance: 1
   attackDistance: 1
   attackSpeed: 1
@@ -101,7 +102,8 @@ MonoBehaviour:
   attackTimer: 0
   health: 100
   damage: 10
-  attackType: 0
+  canCharge: 1
+  attackType: 1
 --- !u!1001 &1360403158869738518
 PrefabInstance:
   m_ObjectHideFlags: 0
