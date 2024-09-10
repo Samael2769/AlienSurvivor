@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &346735058432690667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7978192524042261600}
+  m_Layer: 0
+  m_Name: target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7978192524042261600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346735058432690667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.43, y: 1.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5008519083026192193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &2547383319945015838
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +42,7 @@ GameObject:
   - component: {fileID: 5008519083026192193}
   - component: {fileID: 2980860398376759434}
   - component: {fileID: 4776128626673965812}
+  - component: {fileID: 4386785020478724721}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -32,6 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5373316765290122178}
+  - {fileID: 7978192524042261600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2980860398376759434
@@ -100,6 +133,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5159676, y: 2.5838475}
   m_EdgeRadius: 0
+--- !u!114 &4386785020478724721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2547383319945015838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fdf5d36c099fa4a9eb8555ef6460c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserRate: 5
+  laserTimer: 0
+  laser: {fileID: 385738769145973192, guid: 1e431465239ed524aa49dbba8733e93c, type: 3}
+  target: {fileID: 346735058432690667}
 --- !u!1001 &1210740099105516415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6511275516811911357, guid: 870b82ee9ddae8d4cb2711f160e0474d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.041371707
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6511275516811911357, guid: 870b82ee9ddae8d4cb2711f160e0474d, type: 3}
       propertyPath: m_LocalRotation.w
