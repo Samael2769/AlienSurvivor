@@ -12,6 +12,10 @@ public class PlayerStats : MonoBehaviour
     public float speedMultiplier = 1;
     public int level = 1;
 
+    public int experience = 0;
+
+    public int experienceToNextLevel = 5;
+
     public List<GameObject> shipsLevels = new List<GameObject>();
     public GameObject ship;
 
@@ -26,7 +30,12 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (experience >= experienceToNextLevel)
+        {
+            experience -= experienceToNextLevel;
+            experienceToNextLevel += 5;
+            levelUp();
+        }
     }
 
     public void upgradeLife(int amount)

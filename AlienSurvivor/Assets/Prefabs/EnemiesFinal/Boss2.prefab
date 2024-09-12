@@ -51,8 +51,8 @@ MonoBehaviour:
   player: {fileID: 0}
   minions:
   - {fileID: 4317857193656218166, guid: 42b2866b00863df41bf463977c9c062b, type: 3}
-  life: 100
-  maxLife: 100
+  life: 50
+  maxLife: 50
   level: 1
   spawnRate: 5
   spawnTimer: 0

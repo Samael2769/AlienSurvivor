@@ -100,7 +100,7 @@ MonoBehaviour:
   attackSpeed: 2
   attackCooldown: 1
   attackTimer: 0
-  health: 20
+  health: 10
   damage: 3
   canCharge: 1
   attackType: 0

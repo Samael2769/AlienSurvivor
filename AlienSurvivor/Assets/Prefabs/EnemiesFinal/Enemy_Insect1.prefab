@@ -100,8 +100,8 @@ MonoBehaviour:
   attackSpeed: 1
   attackCooldown: 1
   attackTimer: 0
-  health: 100
-  damage: 10
+  health: 50
+  damage: 2
   canCharge: 1
   attackType: 1
 --- !u!1001 &1360403158869738518
