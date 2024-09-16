@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class PlayerStats : MonoBehaviour
     public List<GameObject> shipsLevels = new List<GameObject>();
     public GameObject ship;
 
+    public GameObject SceneLoader;
+
+    public TextMeshProUGUI lifeText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +41,8 @@ public class PlayerStats : MonoBehaviour
             experienceToNextLevel += 5;
             levelUp();
         }
+
+        lifeText.text = "Life: " + life + "/" + maxLife;
     }
 
     public void upgradeLife(int amount)
@@ -68,6 +75,11 @@ public class PlayerStats : MonoBehaviour
         speedMultiplier += amount;
     }
 
+    public void upgradeDamage(int amount)
+    {
+        damage += amount;
+    }
+
     public void takeDamage(int amount)
     {
         if (armor > 0)
@@ -83,6 +95,16 @@ public class PlayerStats : MonoBehaviour
         {
             life -= amount;
         }
+
+        if (life <= 0)
+        {
+            SceneLoader.GetComponent<SceneLoader>().loadMenuScene();
+        }
+    }
+
+    public void addExperience(int amount)
+    {
+        experience += amount;
     }
 
     public void levelUp()
@@ -97,5 +119,13 @@ public class PlayerStats : MonoBehaviour
         Destroy(ship);
         ship = Instantiate(shipsLevels[level - 1], new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), transform.rotation);
         ship.transform.parent = transform;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Projectile")
+        {
+            takeDamage(10);
+        }
     }
 }

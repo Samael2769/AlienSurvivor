@@ -11,6 +11,8 @@ public class AsteroidsMovement : MonoBehaviour
     private Vector2 initialPosition;
     private bool side = true;
 
+    public int health = 30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,19 @@ public class AsteroidsMovement : MonoBehaviour
             {
                 side = true;
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerProjectile")
+        {
+            health -= 10;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+            Destroy(collision.gameObject);
         }
     }
 }

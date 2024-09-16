@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class waveManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class waveManager : MonoBehaviour
 
     public bool waveCleared = true;
     private bool bossSpawned = false;
+
+    public TextMeshProUGUI waveText;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,8 @@ public class waveManager : MonoBehaviour
                     player.GetComponent<PlayerStats>().experience += 1;
             }
         }
+
+        waveText.text = "Wave: " + waveNumber;
     }
 
     public void StartWave()

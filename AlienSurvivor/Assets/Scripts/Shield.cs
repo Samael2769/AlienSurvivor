@@ -34,7 +34,7 @@ public class Shield : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Projectile")
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "PlayerProjectile" && collision.gameObject.tag != "Bonus")
         {
             health--;
             if (health <= 0)

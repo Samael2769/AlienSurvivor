@@ -62,10 +62,6 @@ public class bossHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerStats>().takeDamage(10);
-        }
         if (collision.gameObject.tag == "PlayerProjectile")
         {
             takeDamage(player.GetComponent<PlayerStats>().damage);

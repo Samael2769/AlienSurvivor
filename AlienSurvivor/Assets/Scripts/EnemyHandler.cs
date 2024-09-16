@@ -110,11 +110,6 @@ public class EnemyHandler : MonoBehaviour
 
     public void OnCollideEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag == "Player")
-        {
-            hitInfo.GetComponent<PlayerStats>().takeDamage(damage);
-            Destroy(gameObject);
-        }
         if (hitInfo.tag == "PlayerProjectile")
         {
             health -= player.GetComponent<PlayerStats>().damage;
@@ -127,11 +122,6 @@ public class EnemyHandler : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag == "Player")
-        {
-            hitInfo.GetComponent<PlayerStats>().takeDamage(damage);
-            Destroy(gameObject);
-        }
         if (hitInfo.tag == "PlayerProjectile")
         {
             health -= player.GetComponent<PlayerStats>().damage;

@@ -16,7 +16,7 @@ public class MissileLauncher : MonoBehaviour
     public float fireRate = 0.5f;
     private float fireTimer = 0.0f;
 
-    private int level = 0;
+    private int level = 1;
 
     // Start is called before the first frame update
     void Start()

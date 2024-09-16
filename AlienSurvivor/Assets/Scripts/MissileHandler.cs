@@ -46,7 +46,10 @@ public class MissileHandler : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        Destroy(gameObject);
+        if (collision.gameObject.tag != "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +62,9 @@ public class MissileHandler : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        Destroy(gameObject);
+        if (collision.gameObject.tag != "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
